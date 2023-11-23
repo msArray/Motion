@@ -5,8 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "build": "tsc && vite build --mode=development",
+    "preview": "vite preview",
+    "rebuild": "rd /s /q docs && vite build --mode=production",
+    "git": "git add . && git commit && git push origin main",
+    "demo": "serve docs"
   },
   "dependencies": {
     "framer-motion": "^10.16.5",
@@ -15,6 +18,9 @@
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.6.0",
+    "@types/node": "^20.9.4",
+    "path": "^0.12.7",
+    "serve": "^14.2.1",
     "typescript": "^5.2.2",
     "vite": "^5.0.0"
   }
